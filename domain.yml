@@ -1,0 +1,74 @@
+version: "3.1"
+
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- inform
+- inform2
+- mood_great
+- mood_unhappy
+- request_travel_for
+- travel_help
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+entities:
+- activity
+- budget
+
+slots:
+  activity:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: activity
+  budget:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: budget
+
+
+forms:
+  simple_travel_form:
+    required_slots:
+      - activity
+      - budget
+
+responses:
+  utter_greet:
+  - text: Hey! Welcome to Banana travels! Type "travel" to plan your next vacation! 
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_submit:
+  - text: I will see what i can do
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  utter_ask_activity:
+  - text: Hiking surfing or fishing?
+  utter_ask_budget:
+  - text: Enter budget(1000,5000,10000)
+
+actions:
+- utter_ask_continue
+- utter_goodbye
+- utter_greet
+- utter_submit
+- action_get_vacation

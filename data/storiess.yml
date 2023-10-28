@@ -1,0 +1,31 @@
+
+version: "3.1"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: travel_help
+  - action: simple_travel_form
+  - active_loop: simple_travel_form
+  - slot_was_set:
+    - requested_slot: activity
+  - intent: inform
+    entities:
+    - activity: surf
+  - slot_was_set:
+    - activity: surf
+  - action: simple_travel_form
+  - slot_was_set:
+    - requested_slot: budget
+  - intent: inform2
+    entities:
+    - budget: '5000'
+  - slot_was_set:
+    - budget: '5000'
+  - action: simple_travel_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: action_get_vacation

@@ -1,0 +1,14 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+- intent: travel_help
+  examples: |
+    - travel
+- intent: inform
+  examples: |
+    - [surf](activity)
+- intent: inform2
+  examples: |
+    - [5000](budget)

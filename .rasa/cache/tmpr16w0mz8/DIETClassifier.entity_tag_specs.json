@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-activity",
+      "2": "I-activity",
+      "3": "L-activity",
+      "4": "U-activity",
+      "5": "B-budget",
+      "6": "I-budget",
+      "7": "L-budget",
+      "8": "U-budget",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-activity": 1,
+      "I-activity": 2,
+      "L-activity": 3,
+      "U-activity": 4,
+      "B-budget": 5,
+      "I-budget": 6,
+      "L-budget": 7,
+      "U-budget": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
